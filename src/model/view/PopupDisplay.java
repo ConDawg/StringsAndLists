@@ -22,7 +22,7 @@ public class PopupDisplay
 	/**
 	 * Uses a popup to display a question to the user and returns their response as a String.
 	 * @param fromQuestion The question being asked.
-	 * @return The users response to the question
+	 * @return The users response to the question.
 	 */
 	public String getResponse(String fromQuestion)
 	{
