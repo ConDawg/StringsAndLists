@@ -14,4 +14,17 @@ public class Kahoot
 		this.creator = "nobody";
 		this.isJumble = false;
 	}
+	
+	public Kahoot(String creator, int questionCount)
+	{
+		this.creator = creator;
+		this.questionCount = questionCount;
+	}
+	
+	public String toString()
+	{
+		String description = "This Kahoot was name by "+ creator + " and has " + questionCount + " questions";
+		
+		return description;
+	}
 }
