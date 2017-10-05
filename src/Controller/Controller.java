@@ -30,21 +30,41 @@ public class Controller
 	
 	private void showTheList()
 	{
+		String currentCreator = "";
 		for (int index =0; index < myKahoots.size(); index += 1)
 		{
+			currentCreator = myKahoots.get(index).getCreator();
+			
+			Kahoot currentKahoot = myKahoots.get(index);
+			String creator = currentKahoot.getCreator();
+			
 			popup.displayText(myKahoots.get(index).toString());
+			
+			if (currentCreator.equals("nobody"))
+			{
+				for (int loop = 0; loop < 5; loop += 1)
+				{
+					popup.displayText("wow nobody does a lot");
+				}
+			}
+			
+			for (int currentLetterIndex = 0; currentLetterIndex < currentCreator.length(); currentLetterIndex += 1)
+			{
+				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex + 1));
+			}
+			
 		}
 	}
 	
 	//I added a bunch of kahoots to my kahoot list.
 	private void fillTheList()
 	{
-		Kahoot fiftyStates = new Kahoot("Kashish", 50);
-		Kahoot mySecondKahoot = new Kahoot("Ethan", 2);
-		Kahoot dinosaurTypes = new Kahoot("Connor", 700);
-		Kahoot worldCountries = new Kahoot("Will", 191);
-		Kahoot animalColor = new Kahoot("Branton", 10);
-		Kahoot presidents = new Kahoot("Obama", 44);
+		Kahoot fiftyStates = new Kahoot("Kashish", 50, "The fifty United States");
+		Kahoot mySecondKahoot = new Kahoot("Ethan", 2, "The Double Data Type");
+		Kahoot dinosaurTypes = new Kahoot("Connor", 700, "Wow thats a lot of dinosaurs");
+		Kahoot worldCountries = new Kahoot("Will", 191, "All the World Countries");
+		Kahoot animalColor = new Kahoot("Branton", 10, "all the colors of the animals");
+		Kahoot presidents = new Kahoot("Obama", 44, "The 44th president of the US");
 		myKahoots.add(fiftyStates);
 		myKahoots.add(mySecondKahoot);
 		myKahoots.add(dinosaurTypes);
