@@ -25,7 +25,10 @@ public class Controller
 		Kahoot myFirstKahoot = new Kahoot();
 		myKahoots.add(myFirstKahoot);
 		fillTheList();
-		showTheList();
+//		showTheList();
+//		changeTheList();
+		editTheList();
+		
 	}
 	
 	private void showTheList()
@@ -52,7 +55,7 @@ public class Controller
 			{
 				popup.displayText(currentCreator.substring(currentLetterIndex, currentLetterIndex + 1));
 			}
-			
+			// same thing but in a different way.
 			String topic = currentKahoot.getTopic();
 			
 			for (int letter = currentKahoot.getTopic().length() - 1; letter >= 0; letter -= 1)
@@ -64,6 +67,7 @@ public class Controller
 	
 	//I added a bunch of kahoots to my kahoot list.
 	private void fillTheList()
+
 	{
 		Kahoot fiftyStates = new Kahoot("Kashish", 50, "The fifty United States");
 		Kahoot mySecondKahoot = new Kahoot("Ethan", 2, "The Double Data Type");
@@ -77,5 +81,34 @@ public class Controller
 		myKahoots.add(worldCountries);
 		myKahoots.add(animalColor);
 		myKahoots.add(presidents);
+	}
+
+	private void changeTheList()
+	{
+		popup.displayText("The current list size is: " + myKahoots.size());
+		Kahoot removed = myKahoots.remove(1);
+		popup.displayText("I removed the Kahoot by " + removed.getCreator());
+		popup.displayText("The list now has: " + myKahoots.size() + " items inside.");
+		myKahoots.add(0, removed);
+		
+		popup.displayText("The list is still: " + myKahoots.size() + " items big." );
+		removed = myKahoots.set(2, new Kahoot());
+		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with " + myKahoots.get(2).getCreator());
+		
+	}
+	
+	private void editTheList()
+	{
+		popup.displayText("Welcome to Connor Johnson's super awesome practice in list editing!!!XD");
+		popup.displayText("The current list of kahoots currently has " + myKahoots.size() + " Kahoots in it!");
+		Kahoot removed = myKahoots.remove(1);
+		popup.displayText("I removed " + removed.getCreator() + "'s Kahoot!");
+		popup.displayText("Poor " + removed.getCreator() + " is now lonely in the void.");
+		popup.displayText("I dont want " + removed.getCreator() + " to be lonely forever!");
+		popup.displayText("I think I have an idea");
+		Kahoot removedTwo = myKahoots.remove(3);
+		popup.displayText("Now I removed " + removedTwo.getCreator() + " as well!");
+		popup.displayText("Now " + removed.getCreator() + " and " + removedTwo.getCreator() + " are both lonely in the void, but they're lonely together, which I guess is nice.");
+		popup.displayText("The list now has " + myKahoots.size() + " Kahoots inside.");
 	}
 }
