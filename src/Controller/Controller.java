@@ -110,5 +110,9 @@ public class Controller
 		popup.displayText("Now I removed " + removedTwo.getCreator() + " as well!");
 		popup.displayText("Now " + removed.getCreator() + " and " + removedTwo.getCreator() + " are both lonely in the void, but they're lonely together, which I guess is nice.");
 		popup.displayText("The list now has " + myKahoots.size() + " Kahoots inside.");
+		removed = myKahoots.set(2, new Kahoot());
+		removedTwo = myKahoots.set(5, new Kahoot());
+		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with " + myKahoots.get(2).getCreator() + "'s Kahoot and the Kahoot by " + removedTwo.getCreator() + " was replaced by " + myKahoots.get(5).getCreator() + ".");
+		popup.displayText("Now my Kahoots are in Kahoots with the other Kahoots.");
 	}
 }
