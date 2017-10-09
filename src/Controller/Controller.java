@@ -115,4 +115,15 @@ public class Controller
 		popup.displayText("The kahoot by " + removed.getCreator() + " was replaced with " + myKahoots.get(2).getCreator() + "'s Kahoot and the Kahoot by " + removedTwo.getCreator() + " was replaced by " + myKahoots.get(5).getCreator() + ".");
 		popup.displayText("Now my Kahoots are in Kahoots with the other Kahoots.");
 	}
+
+	public PopupDisplay getPopup()
+	{
+		return popup;
+	}
+	
+	public ArrayList<Kahoot> getMyKahoots()
+	{
+		return (ArrayList<Kahoot>) myKahoots;
+	}
+	
 }
